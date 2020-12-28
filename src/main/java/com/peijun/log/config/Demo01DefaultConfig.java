@@ -1,5 +1,6 @@
 package com.peijun.log.config;
 
+import ch.qos.logback.classic.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -7,6 +8,8 @@ import org.slf4j.LoggerFactory;
  * 配置logback
  *
  * 以下是 logback 的初始化步骤：
+ *
+ * 下面寻找文件的循序 各个版本可能不一样，以实际版本为主
  *
  * logback 会在类路径下寻找名为 logback-test.xml 的文件。
  *   如果没有找到，logback 会继续寻找名为 logback.groovy 的文件。
@@ -19,14 +22,15 @@ import org.slf4j.LoggerFactory;
  * 如果你使用的是 maven，你可以在 src/test/resources 下新建 logback-test.xml。maven 会确保它不会被生成。
  * 所以你可以在测试环境中给配置文件命名为 logback-test.xml，在生产环境中命名为 logback.xml。
  */
-public class ConfigDemo01 {
-    final static Logger logger = LoggerFactory.getLogger(ConfigDemo01.class);
+public class Demo01DefaultConfig {
+    final static Logger logger = LoggerFactory.getLogger(Demo01DefaultConfig.class);
 
+    /**
+     * {@link BasicConfigurator}
+     */
     public static void main(String[] args) {
-        logger.info("Entering application.");
-
-        Gang gang = new Gang();
-        gang.doIt();
-        logger.info("Exiting application.");
+        logger.info("进入项目.");
+        logger.debug("项目运行中...");
+        logger.info("退出项目");
     }
 }
