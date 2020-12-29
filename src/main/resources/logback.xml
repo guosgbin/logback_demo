@@ -1,23 +1,27 @@
 <configuration>
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>demo.log</file>
-        <encoder>
-            <pattern>%date %level [%thread] %logger{10} [%file : %line] %msg%n</pattern>
-        </encoder>
-    </appender>
+<!--    1.当前配置文件的开始定义了一个变量，之后通过引用这个变量指定了日志文件的路径-->
+<!--    <property name="USER_NAME" value="data/logs" />-->
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%msg%n</pattern>
-        </encoder>
-    </appender>
+<!--    2.在 java 的系统变量中定义一个同样的变量名，达到的效果是一样的。
+        可以通过如下的方式去运行：在 java 的系统变量中定义一个同样的变量名，达到的效果是一样的。可以通过如下的方式去运行：
 
-    <!-- additivity="false" 取消默认的 累加行为 -->
-    <logger name="com.peijun.log.config.chapter" additivity="false">
-        <appender-ref ref="FILE" />
-    </logger>
+        java -DUSER_HOME="data/logss" MyApp3
+-->
 
-    <root level="debug">
-        <appender-ref ref="STDOUT" />
-    </root>
+<!--     3.当需要定义多个变量时，可以将这些变量放到一个单独的文件中。-->
+<!--    <property file="D:\IdeaWorkspace10\logback-demo\src\main\resources\configSample08.properties"/>-->
+
+<!--    4.引用 classpath 下的资源文件 -->
+        <property resource="configSample08.properties" />
+
+        <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${USER_NAME}/myApp111.log</file>
+            <encoder>
+                <pattern>%msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <root level="debug">
+            <appender-ref ref="FILE" />
+        </root>
 </configuration>
