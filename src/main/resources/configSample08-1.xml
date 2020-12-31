@@ -9,10 +9,10 @@
 -->
 
 <!--     3.当需要定义多个变量时，可以将这些变量放到一个单独的文件中。-->
-<!--    <property file="D:\IdeaWorkspace10\logback-demo\src\main\resources\configSample08.properties"/>-->
+<!--    <property file="D:\IdeaWorkspace10\logback-demo\src\main\resources\configSample08-1.properties"/>-->
 
 <!--    4.引用 classpath 下的资源文件 -->
-        <property resource="configSample08.properties" />
+        <property resource="configSample08-1.properties" />
 
         <appender name="FILE" class="ch.qos.logback.core.FileAppender">
             <file>${USER_NAME}/myApp111.log</file>

@@ -1,0 +1,18 @@
+<configuration>
+
+    <!--
+    在这个例子中，nodeId 这个变量被定义在上下文范围，它在每个日志事件，甚至通过序列化发送到远程服务器上都有效。
+    -->
+    <property scope="context" name="nodeId" value="firstNode"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${USER_NAME}/myApp111.log</file>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

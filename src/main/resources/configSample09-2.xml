@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- HOSTNAME 在配置期间会被自动定义为上下文范围内。 -->
+<!--            <pattern>${HOSTNAME} - %msg%n</pattern>-->
+
+            <!-- CONTEXT_NAME 属性对应当前上下文的名字。 -->
+            <pattern>${CONTEXT_NAME} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

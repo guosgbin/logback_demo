@@ -1,0 +1,28 @@
+<configuration>
+
+    <define name="rootLevel" class="com.peijun.log.config.configuration.DemoPropertyDefiner01">
+        <!-- 这个里面的数据是可以塞到DemoPropertyDefiner01属性中，但是不知道怎么拿出来 -->
+        <shape>round</shape>
+        <color>brown</color>
+        <size>24</size>
+    </define>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <File>data/${rootLevel.shape}-${size}-${color}.log</File>
+        <encoder>
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %contextName [%t] %level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${rootLevel}">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

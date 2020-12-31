@@ -5,6 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * https://segmentfault.com/a/1190000020894316?utm_source=tag-newest
+ *
  * 配置logback
  *
  * 以下是 logback 的初始化步骤：

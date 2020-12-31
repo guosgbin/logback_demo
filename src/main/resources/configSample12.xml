@@ -1,0 +1,15 @@
+<configuration>
+
+    <contextListener class="com.peijun.log.config.configuration.LoggerStartupListener"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <File>data/${localIP}.log</File>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

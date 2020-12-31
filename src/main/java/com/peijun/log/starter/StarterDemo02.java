@@ -5,6 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * https://segmentfault.com/a/1190000020894316?utm_source=tag-newest
+ *
+ *
  * 任何日志 API 的优势在于它能够禁止某些日志的输出,但是又不会妨碍另一些日志的输出.
  * 通过假定一个日志空间,这个空间包含所有可能的日志语句,这些日志语句根据开发人员设定的标准来进行分类.
  * 在 logback-classic 中,分类是 logger 的一部分,
